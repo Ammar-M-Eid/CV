@@ -49,12 +49,19 @@ export const HouseSelector: React.FC = () => {
         onClick={selectRandomHouse}
         disabled={isAnimating}
         className="px-4 py-2 bg-secondary/30 rounded-lg hover:bg-secondary/50 
-        transition-all duration-300 flex items-center gap-2"
+        transition-all duration-300 flex items-center gap-2 font-semibold border border-primary shadow"
+        title="Discover your house and my passion for software quality!"
       >
         <Shield className="w-5 h-5 text-primary" />
-        <span>{selectedHouse ? selectedHouse.name : "Sort me!"}</span>
+        <span>
+          {selectedHouse ? selectedHouse.name :
+            <>
+              Sort me! <span className="ml-2 text-xs text-primary/80">(Testing | Quantum | QAIU President)</span>
+            </>
+          }
+        </span>
       </button>
-      
+
       {selectedHouse && !isAnimating && (
         <div className="mt-2 p-3 rounded-lg bg-gradient-to-r animate-fadeIn">
           <div className={`bg-gradient-to-r ${selectedHouse.color} 
@@ -62,7 +69,7 @@ export const HouseSelector: React.FC = () => {
             <h4 className="font-semibold mb-2 text-white">{selectedHouse.name}</h4>
             <div className="flex flex-wrap gap-2">
               {selectedHouse.traits.map((trait) => (
-                <span key={trait} 
+                <span key={trait}
                   className="text-xs bg-white/20 px-2 py-1 rounded-full text-white">
                   {trait}
                 </span>
