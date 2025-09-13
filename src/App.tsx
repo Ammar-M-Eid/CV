@@ -8,7 +8,7 @@ import { MagicWand } from './components/MagicWand';
 import { HouseSelector } from './components/HouseSelector';
 import { AnimeAvatar } from './components/AnimeAvatar';
 import { AtomSVG, VectorSVG } from './components/AtomsAndVectors';
-import ammarPic from '../ammar pic.jpg';
+import ammarPic from '/ammar.jpg';
 
 
 // Interactive background effect
